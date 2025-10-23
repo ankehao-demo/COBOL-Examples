@@ -29,6 +29,12 @@ jobs:
 
           Body:
           ${{ github.event.issue.body }}
+
+          REQUIREMENTS:
+          - When you open a PR, include this exact line in the PR description:
+            Fixes ${{ github.repository }}#${{ github.event.issue.number }}
+          - For every commit message in that PR, include:
+            Refs ${{ github.repository }}#${{ github.event.issue.number }}
           EOF
 
       - name: Create Devin session
